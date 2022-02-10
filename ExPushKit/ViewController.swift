@@ -40,7 +40,8 @@ extension ViewController: PKPushRegistryDelegate {
     didUpdate pushCredentials: PKPushCredentials,
     for type: PKPushType
   ) {
-    print(pushCredentials.token.map { String(format: "%02.2hhx", $0) }.joined())
+    let deviceID = pushCredentials.token.map { String(format: "%02.2hhx", $0) }.joined()
+    // deviceID를 server에 전송
   }
   
   func pushRegistry(
